@@ -81,3 +81,11 @@ body {
   border-radius: 50%;
   display: inline-block;
 }
+
+  .disabled-div {
+    background-color: #f0f0f0;
+    color: #a0a0a0;
+    opacity: 0.6;
+    pointer-events: none;
+    filter: grayscale(100%);
+  }

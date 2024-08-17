@@ -146,26 +146,85 @@ export default function Home() {
         onClose={handleCloseModal}
         sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
-        <Box sx={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px' }}>
-          <Typography variant="h6" component="h2">
-            {activeCard.name}
-          </Typography>
-          <div className="flex justify-end">
-          <Typography sx={{ mt: 2 ,color:"black"}}align="right">
-            El disponible N1 es
-            <br></br>   &nbsp;
-            Luis Sanabria
-            <br></br>   &nbsp;
-            Telefono: 3185934757
-            <br></br>   &nbsp;
-          </Typography>
-          </div>
-          <div className="flex justify-end">
-          <p className="inline-flex left-0 top-0 flex justify-left border-b border-white-600 bg-gradient-to-b from-red-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:white-800/30 dark:from-inherit lg:static  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30"style={{ backgroundColor: 'rgb(230, 84, 84)', color: 'white'}}>
-          <Link  href="sip:3197399411"><button style={{color:"white"}}> <Image src={"/call.svg"} alt={"llamar"} width={50} height={50}/>Llamar</button></Link>
-          </p>
-          </div>
-        </Box>
+        <Box sx={{ backgroundColor: 'white', padding: '20px', borderRadius: '12px' }}>
+        <Typography variant="h5" component="h1" align="center" sx={{ marginBottom: '20px' }}>
+        {activeCard.name}
+  </Typography>
+  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+    
+    <div className="column">
+      <Typography variant="h6" component="h2">
+        N1
+      </Typography>
+      <Typography sx={{ mt: 2, color: "black" }} align="right">
+        El disponible N1 es
+        <br /> &nbsp;
+        Luis Sanabria
+        <br /> &nbsp;
+        Telefono: 3185934757
+        <br /> &nbsp;
+      </Typography>
+      <div className="flex justify-end">
+        <p className="inline-flex left-0 top-0 flex justify-left border-b border-white-600 bg-gradient-to-b from-red-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:white-800/30 dark:from-inherit lg:static lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30" style={{ backgroundColor: 'rgb(230, 84, 84)', color: 'white' }}>
+          <Link href="sip:3197399411">
+            <button style={{ color: "white" }}>
+              <Image src={"/call.svg"} alt={"llamar"} width={50} height={50} />
+              Llamar
+            </button>
+          </Link>
+        </p>
+      </div>
+    </div>
+
+    <div className="disabled-div">
+      <Typography variant="h6" component="h2">
+        N2
+      </Typography>
+      <Typography sx={{ mt: 2, color: "black" }} align="right">
+        El disponible N1 es
+        <br /> &nbsp;
+        Luis Sanabria
+        <br /> &nbsp;
+        Telefono: 3185934757
+        <br /> &nbsp;
+      </Typography>
+      <div className="flex justify-end">
+        <p className="inline-flex left-0 top-0 flex justify-left border-b border-white-600 bg-gradient-to-b from-red-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:white-800/30 dark:from-inherit lg:static lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30" style={{ backgroundColor: 'rgb(230, 84, 84)', color: 'white' }}>
+          <Link href="sip:3197399411">
+            <button style={{ color: "white" }}>
+              <Image src={"/call.svg"} alt={"llamar"} width={50} height={50} />
+              Llamar
+            </button>
+          </Link>
+        </p>
+      </div>
+    </div>
+    <div className="column">
+      <Typography variant="h6" component="h2">
+N3      </Typography>
+      <Typography sx={{ mt: 2, color: "black" }} align="right">
+        El disponible N1 es
+        <br /> &nbsp;
+        Luis Sanabria
+        <br /> &nbsp;
+        Telefono: 3185934757
+        <br /> &nbsp;
+      </Typography>
+      <div className="flex justify-end">
+        <p className="inline-flex left-0 top-0 flex justify-left border-b border-white-600 bg-gradient-to-b from-red-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:white-800/30 dark:from-inherit lg:static lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30" style={{ backgroundColor: 'rgb(230, 84, 84)', color: 'white' }}>
+          <Link href="sip:3197399411">
+            <button style={{ color: "white" }}>
+              <Image src={"/call.svg"} alt={"llamar"} width={50} height={50} />
+              Llamar
+            </button>
+          </Link>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</Box>
+        
       </Modal>
 
       <div className="fixed bottom-0 right-0 p-4 m-4 bg-gray-400 text-white rounded-lg shadow-lg text-center justify-center items-center">
