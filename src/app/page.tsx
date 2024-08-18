@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { useState } from 'react';
 import Image from "next/image";
 import Container from '@mui/material/Container/Container';
@@ -13,63 +13,71 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import LetterGroup from './letra';
 import Card from './card';
+import Clock from './reloj';
 import createNamesByFirstLetter from './create';
+import fsPromises from 'fs/promises';
+import path from 'path'
+import { GetStaticProps } from 'next';
+import { useEffect } from 'react';
+import CardList from './contaiD';
 interface MyObject {
   [key: string]: any; // This allows any string to be used as a key, and the value can be of any type.
 }
 
-const clients:MyObject = {
-  "ACCIÓN FIDUCIARIA": "ECHO_NEXUS",
-  "ALIANZA FIDUCIARIA": "ECHO_NEXUS",
-  "ALKOSTO": "ECHO_NEXUS",
+
+const clients: MyObject = {
+  "ACCIÓN FIDUCIARIA": "Echo Nexus",
+  "ALIANZA FIDUCIARIA": "Echo Nexus",
+  "ALKOSTO": "Echo Nexus",
   "ATH": "ATH",
-  "BANCO W": "EQUIPO CALI",
-  "BOSI": "ECHO_NEXUS",
-  "BTG BD": "SYNERGY",
-  "BTG CLOUD_PODS": "SYNERGY",
-  "CADENA": "GRYFFINDOR",
-  "CARDIO INFANTIL": "ECHO_NEXUS",
-  "CELSIA": "EQUIPO CALI",
-  "CLINICA VIDA": "GRYFFINDOR",
-  "COEXITO": "EQUIPO CALI",
-  "COMERCIAL CARD": "GRYFFINDOR",
-  "COMFENALCO": "GRYFFINDOR",
-  "CORONA": "GRYFFINDOR",
-  "CORREDORES ASOCIADOS": "ECHO_NEXUS",
-  "D1": "ECHO_NEXUS",
-  "DISLICORES": "GRYFFINDOR",
-  "DR SURA APP": "UNIO",
-  "DR SURA BD": "GRYFFINDOR",
-  "DR SURA SO": "GRYFFINDOR",
-  "EL COLOMBIANO": "GRYFFINDOR",
-  "EMI": "ECHO_NEXUS",
-  "ENLACE EMPRESARIAL": "EQUIPO CALI",
-  "ENLACE OPERATIVO": "GRYFFINDOR",
-  "FIDUPOPULAR": "ECHO_NEXUS",
-  "GEO SURA": "GRYFFINDOR",
-  "HOMI": "ECHO_NEXUS",
-  "HOSPITAL PABLO TOBON U": "ECHO_NEXUS",
-  "LA RIVERA": "ECHO_NEXUS",
-  "LA SOBERANA": "ECHO_NEXUS",
-  "LEGUIS": "ECHO_NEXUS",
-  "LINEA DIRECTA": "GRYFFINDOR",
-  "MATRIX": "ECHO_NEXUS",
-  "METRO": "ECHO_NEXUS",
-  "MUTUAL SER": "EQUIPO CALI",
-  "NOVAVENTA": "ECHO_NEXUS",
-  "NUTRESA": "GRYFFINDOR",
-  "OPENQUAKE": "GRYFFINDOR",
-  "PROTECCIÓN": "ECHO_NEXUS",
-  "SETI INTERNO": "GRYFFINDOR",
-  "SURA IM MÉXICO": "EQUIPO CALI",
-  "TCC": "GRYFFINDOR",
-  "XM BD": "GRYFFINDOR",
-  "XM SO": "GRYFFINDOR",
-  "ZONA FRANCA": "ECHO_NEXUS"
+  "BANCO W": "Equipo Cali",
+  "BOSI": "Echo Nexus",
+  "BTG BD": "Synergy",
+  "BTG CLOUD_PODS": "Synergy",
+  "CADENA": "Gryffindor (BD)",
+  "CARDIO INFANTIL": "Echo Nexus",
+  "CELSIA": "Equipo Cali",
+  "CLINICA VIDA": "Gryffindor",
+  "COEXITO": "Equipo Cali",
+  "COMERCIAL CARD": "Gryffindor",
+  "COMFENALCO": "Gryffindor",
+  "CORONA": "Gryffindor",
+  "CORREDORES ASOCIADOS": "Echo Nexus",
+  "D1": "Echo Nexus",
+  "DISLICORES": "Gryffindor",
+  "DR SURA APP": "DR Sura APP",
+  "DR SURA BD": "DR Sura BD",
+  "DR SURA SO": "Dr Sura SO",
+  "EL COLOMBIANO": "Gryffindor",
+  "EMI": "Echo Nexus",
+  "ENLACE EMPRESARIAL": "Equipo Cali",
+  "ENLACE OPERATIVO": "Gryffindor",
+  "FIDUPOPULAR": "Echo Nexus",
+  "GEO SURA": "Gryffindor",
+  "HOMI": "Echo Nexus",
+  "HOSPITAL PABLO TOBON U": "Echo Nexus",
+  "LA RIVERA": "Echo Nexus",
+  "LA SOBERANA": "Echo Nexus",
+  "LEGUIS": "Echo Nexus",
+  "LINEA DIRECTA": "Gryffindor",
+  "MATRIX": "Echo Nexus",
+  "METRO": "Echo Nexus",
+  "MUTUAL SER": "Equipo Cali",
+  "NOVAVENTA": "Echo Nexus",
+  "NUTRESA": "Gryffindor",
+  "OPENQUAKE": "Gryffindor",
+  "PROTECCIÓN": "Echo Nexus",
+  "SETI INTERNO": "Gryffindor",
+  "SURA IM MÉXICO": "Equipo Cali",
+  "TCC": "Gryffindor",
+  "XM BD": "XM BD",
+  "XM SO": "XM SO",
+  "ZONA FRANCA": "Echo Nexus"
 };
 
-export default function Home() {
 
+export default  function Home() {
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCard, setActiveCard] = useState({ name: '' });
 
@@ -86,23 +94,9 @@ export default function Home() {
     () => createNamesByFirstLetter(Object.keys(clients)),
     [clients]
   );
-  const Clock = () => {
-    const d = new Date();
-    const [currentTime, setCurrentTime] = React.useState('');
-
-    React.useEffect(() => {
-        const date = d.getHours() + ' : ' + d.getMinutes() + ' : ' + d.getSeconds();
-        const timer = setInterval(() => {
-            setCurrentTime(date);
-        }, 1000);
-
-        return () => clearInterval(timer);
-    }, [currentTime]);
-
-    return <>{currentTime}</>;
-};
+  
   return (
-    
+  
     <main className="flex min-h-screen flex-col items-center flex-col p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center  backdrop-blur-2xl  lg:static lg:w-auto  lg:rounded-xl pb-10 pt-10">
@@ -151,76 +145,9 @@ export default function Home() {
         {activeCard.name}
   </Typography>
   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+  <CardList name={String(activeCard.name)}></CardList>
     
-    <div className="column">
-      <Typography variant="h6" component="h2">
-        N1
-      </Typography>
-      <Typography sx={{ mt: 2, color: "black" }} align="right">
-        El disponible N1 es
-        <br /> &nbsp;
-        Luis Sanabria
-        <br /> &nbsp;
-        Telefono: 3185934757
-        <br /> &nbsp;
-      </Typography>
-      <div className="flex justify-end">
-        <p className="inline-flex left-0 top-0 flex justify-left border-b border-white-600 bg-gradient-to-b from-red-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:white-800/30 dark:from-inherit lg:static lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30" style={{ backgroundColor: 'rgb(230, 84, 84)', color: 'white' }}>
-          <Link href="sip:3197399411">
-            <button style={{ color: "white" }}>
-              <Image src={"/call.svg"} alt={"llamar"} width={50} height={50} />
-              Llamar
-            </button>
-          </Link>
-        </p>
-      </div>
-    </div>
 
-    <div className="disabled-div">
-      <Typography variant="h6" component="h2">
-        N2
-      </Typography>
-      <Typography sx={{ mt: 2, color: "black" }} align="right">
-        El disponible N1 es
-        <br /> &nbsp;
-        Luis Sanabria
-        <br /> &nbsp;
-        Telefono: 3185934757
-        <br /> &nbsp;
-      </Typography>
-      <div className="flex justify-end">
-        <p className="inline-flex left-0 top-0 flex justify-left border-b border-white-600 bg-gradient-to-b from-red-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:white-800/30 dark:from-inherit lg:static lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30" style={{ backgroundColor: 'rgb(230, 84, 84)', color: 'white' }}>
-          <Link href="sip:3197399411">
-            <button style={{ color: "white" }}>
-              <Image src={"/call.svg"} alt={"llamar"} width={50} height={50} />
-              Llamar
-            </button>
-          </Link>
-        </p>
-      </div>
-    </div>
-    <div className="column">
-      <Typography variant="h6" component="h2">
-N3      </Typography>
-      <Typography sx={{ mt: 2, color: "black" }} align="right">
-        El disponible N1 es
-        <br /> &nbsp;
-        Luis Sanabria
-        <br /> &nbsp;
-        Telefono: 3185934757
-        <br /> &nbsp;
-      </Typography>
-      <div className="flex justify-end">
-        <p className="inline-flex left-0 top-0 flex justify-left border-b border-white-600 bg-gradient-to-b from-red-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:white-800/30 dark:from-inherit lg:static lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30" style={{ backgroundColor: 'rgb(230, 84, 84)', color: 'white' }}>
-          <Link href="sip:3197399411">
-            <button style={{ color: "white" }}>
-              <Image src={"/call.svg"} alt={"llamar"} width={50} height={50} />
-              Llamar
-            </button>
-          </Link>
-        </p>
-      </div>
-    </div>
 
   </div>
 </Box>
@@ -231,5 +158,6 @@ N3      </Typography>
     <span className='dot'></span>   Contactar Disponible <span className='dot2'></span>  Contactar por Teams
   </div>
     </main>
+    
   );
   }
