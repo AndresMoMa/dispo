@@ -42,7 +42,7 @@ alphabet-list {
 }
 body {
   color: rgb(var(--foreground-rgb));
-  background: radial-gradient(rgba(230, 84, 84, 0.253),white)
+  background: radial-gradient(rgba(225, 198, 198, 0.253),white)
 }
 
 @layer utilities {
@@ -73,9 +73,12 @@ body {
 .dot {
   height: 25px;
   width: 25px;
-  background-color: rgba(230, 85, 88, 0.818);
+  background-color: rgba(255, 255, 255, 0.818);
   border-radius: 50%;
   display: inline-block;
+  border-style: solid;
+  border-color: red;
+  border-width: 2px;
 }
 .dot2 {
   height: 25px;
@@ -96,7 +99,7 @@ body {
     display: none;
   }
   @font-face {
-    font-family: "Medium";   /*Can be any text*/
-    src: local("AirbnbCerealMedium"),
-      url("/fonts/Newake-Font-Demo.otf") format("otf");
+    font-family: "Newake-Font-Demo";   /*Can be any text*/
+    src: local("Newake-Font-Demo"),
+      url("/fonts/Newake-Font-Demo.otf") format("opentype");
   }

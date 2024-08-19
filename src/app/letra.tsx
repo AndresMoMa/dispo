@@ -11,13 +11,14 @@ type prosk = {
     <Box sx={{ display: 'flex', width: '100%' }}>
       <Box
         sx={{
+          fontFamily:"Sanchez",
           borderRight: '1px solid #E4E5E7',
           display: 'flex',
           alignItems: 'center',
-          color: '#6D6E70',
+          color: 'darkred',
           fontSize: '20px',
-          fontFamily: 'arial',
-          fontWeight: 400,
+
+          fontWeight: 300,
           justifyContent: 'end',
           paddingRight: '16px',
           marginRight: '32px',

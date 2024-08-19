@@ -14,16 +14,16 @@ type CardProps = {
   };
 const Dispoc: React.FC<CardProps> = ({ nivel,nombre,telefono,onClick}) => {
   return (
-    <div className=" " style={{width:150,}}>
-      <Typography variant="h6" component="h2" id='niveld'align="center">
+    <div className=" " style={{width:150,fontFamily:"Sanchez"}}>
+      <Typography sx={{  color: "red", fontFamily:"Sanchez"}} variant="h6" component="h2" id='niveld'align="center">
         {nivel}
       </Typography>
-      <Typography sx={{ mt: 2, color: "black" }} align="center">
+      <Typography sx={{ mt: 2, color: "black", fontFamily:"Sanchez"}} align="center">
         
         <br /> &nbsp;
         {nombre}
         <div className="flex justify-center">
-        <IconContext.Provider value={{ color: "red", size:"30" }}>
+        <IconContext.Provider value={{ color: "red", size:"35" }}>
 
         <CgProfile />
         </IconContext.Provider>

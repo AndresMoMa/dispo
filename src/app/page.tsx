@@ -25,55 +25,57 @@ interface MyObject {
 }
 
 
-const clients: MyObject = {
-  "ACCIÓN FIDUCIARIA": "Echo Nexus",
-  "ALIANZA FIDUCIARIA": "Echo Nexus",
-  "ALKOSTO": "Echo Nexus",
-  "ATH": "ATH",
-  "BANCO W": "Equipo Cali",
-  "BOSI": "Echo Nexus",
-  "BTG BD": "Synergy",
-  "BTG CLOUD_PODS": "Synergy",
-  "CADENA": "Gryffindor (BD)",
-  "CARDIO INFANTIL": "Echo Nexus",
-  "CELSIA": "Equipo Cali",
-  "CLINICA VIDA": "Gryffindor",
-  "COEXITO": "Equipo Cali",
-  "COMERCIAL CARD": "Gryffindor",
-  "COMFENALCO": "Gryffindor",
-  "CORONA": "Gryffindor",
-  "CORREDORES ASOCIADOS": "Echo Nexus",
-  "D1": "Echo Nexus",
-  "DISLICORES": "Gryffindor",
-  "DR SURA APP": "DR Sura APP",
-  "DR SURA BD": "DR Sura BD",
-  "DR SURA SO": "Dr Sura SO",
-  "EL COLOMBIANO": "Gryffindor",
-  "EMI": "Echo Nexus",
-  "ENLACE EMPRESARIAL": "Equipo Cali",
-  "ENLACE OPERATIVO": "Gryffindor",
-  "FIDUPOPULAR": "Echo Nexus",
-  "GEO SURA": "Gryffindor",
-  "HOMI": "Echo Nexus",
-  "HOSPITAL PABLO TOBON U": "Echo Nexus",
-  "LA RIVERA": "Echo Nexus",
-  "LA SOBERANA": "Echo Nexus",
-  "LEGUIS": "Echo Nexus",
-  "LINEA DIRECTA": "Gryffindor",
-  "MATRIX": "Echo Nexus",
-  "METRO": "Echo Nexus",
-  "MUTUAL SER": "Equipo Cali",
-  "NOVAVENTA": "Echo Nexus",
-  "NUTRESA": "Gryffindor",
-  "OPENQUAKE": "Gryffindor",
-  "PROTECCIÓN": "Echo Nexus",
-  "SETI INTERNO": "Gryffindor",
-  "SURA IM MÉXICO": "Equipo Cali",
-  "TCC": "Gryffindor",
-  "XM BD": "XM BD",
-  "XM SO": "XM SO",
-  "ZONA FRANCA": "Echo Nexus"
-};
+const clients: MyObject = 
+  {
+    "Acción fiduciaria": "Echo Nexus",
+    "Alianza fiduciaria": "Echo Nexus",
+    "Alkosto": "Echo Nexus",
+    "Ath": "ATH",
+    "Banco w": "Equipo Cali",
+    "Bosi": "Echo Nexus",
+    "Btg bd": "Synergy",
+    "Btg cloud_pods": "Synergy",
+    "Cadena": "Gryffindor (BD)",
+    "Cardio infantil": "Echo Nexus",
+    "Celsia": "Equipo Cali",
+    "Clinica vida": "Gryffindor",
+    "Coexito": "Equipo Cali",
+    "Comercial card": "Gryffindor",
+    "Comfenalco": "Gryffindor",
+    "Corona": "Gryffindor",
+    "Corredores asociados": "Echo Nexus",
+    "D1": "Echo Nexus",
+    "Dislicores": "Gryffindor",
+    "Dr sura app": "DR Sura APP",
+    "Dr sura bd": "DR Sura BD",
+    "Dr sura so": "Dr Sura SO",
+    "El colombiano": "Gryffindor",
+    "Emi": "Echo Nexus",
+    "Enlace empresarial": "Equipo Cali",
+    "Enlace operativo": "Gryffindor",
+    "Fidupopular": "Echo Nexus",
+    "Geo sura": "Gryffindor",
+    "Homi": "Echo Nexus",
+    "Hospital pablo tobon u": "Echo Nexus",
+    "La rivera": "Echo Nexus",
+    "La soberana": "Echo Nexus",
+    "Leguis": "Echo Nexus",
+    "Linea directa": "Gryffindor",
+    "Matrix": "Echo Nexus",
+    "Metro": "Echo Nexus",
+    "Mutual ser": "Equipo Cali",
+    "Novaventa": "Echo Nexus",
+    "Nutresa": "Gryffindor",
+    "Openquake": "Gryffindor",
+    "Protección": "Echo Nexus",
+    "Seti interno": "Gryffindor",
+    "Sura im méxico": "Equipo Cali",
+    "Tcc": "Gryffindor",
+    "Xm bd": "XM BD",
+    "Xm so": "XM SO",
+    "Zona franca": "Echo Nexus"
+  }
+  
 
 
 export default  function Home() {
@@ -109,13 +111,13 @@ export default  function Home() {
             />
 
         </p>
-        <p className="fixed right-0 top-0 flex w-full justify-left border-b border-white-600 bg-gradient-to-b from-red-200 pb-6 pt-8 backdrop-blur-2xl dark:border-white-800 dark:white-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 pb-10"style={{ backgroundColor: 'rgb(230, 84, 84)', color: 'white'}}>
+        <p className="fixed right-0 top-0 flex w-full justify-left 6 pt-8 backdrop-blur-2xl   lg:static lg:w-auto   pb-10"style={{ fontSize:30,   color: 'red',fontFamily:"Sanchez"}}>
         <Clock/>
         <br/>
         </p>
         
       </div>
-      <Container maxWidth="lg"sx={{ height: '500px', overflowY: 'auto' }}  >
+      <Container maxWidth="lg"sx={{ height: 'max', overflowY: 'auto' }}  >
       <List sx={{ '> * + *': { marginTop: '4  px' } }}>
         {Object.keys(clientsByLetter).map((letter) => (
           <ListItem key={letter}>
@@ -141,7 +143,7 @@ export default  function Home() {
         sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
         <Box sx={{ backgroundColor: 'white', padding: '20px', borderRadius: '12px' }}>
-        <Typography variant="h5" component="h1" align="center" sx={{ marginBottom: '20px' }}>
+        <Typography variant="h3" component="h1" align="center" sx={{ marginBottom: '20px', fontFamily:"Sanchez" ,color:"darkred"}}>
         {activeCard.name}
   </Typography>
   <div style={{ display: 'flex', justifyContent: 'space-between' }}>

@@ -16,10 +16,15 @@ const Card: React.FC<CardProps> = ({ name,to,onClick}) => {
             
           maxWidth: '420px',
           height: '48px',
-          backgroundColor: 'rgba(230, 85, 88, 0.818)',
+          backgroundColor: 'white',
           borderRadius: '8px',
           display: 'flex',
+          fontFamily:"Sanchez",
           alignItems: 'center',
+          borderStyle:'solid',
+          borderColor:'red' ,
+          borderWidth:2
+          
         }}
         onClick={onClick}
       >
