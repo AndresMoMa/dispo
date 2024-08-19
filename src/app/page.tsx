@@ -124,7 +124,7 @@ export default  function Home() {
                 <Card
                   key={name}
                   name={name}
-                  to={"sip:3197399411"}
+                  to={"sip:${telefono}"}
                   onClick={() => handleCardClick(clients[name.toString()])}
               
                   

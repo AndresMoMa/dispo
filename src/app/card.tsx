@@ -8,7 +8,7 @@ type CardProps = {
   };
 const Card: React.FC<CardProps> = ({ name,to,onClick}) => {
   return (
-    <Link  underline="none" color="black" href={to} >
+    <Link  underline="none" color="black"  >
     
 
       <Box

@@ -15,6 +15,9 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+.div{
+  font-family: "Light"; 
+}
 .scrollable-list {
   height: 200px; /* Adjust the height as needed */
   overflow-y: auto;
@@ -88,4 +91,12 @@ body {
     opacity: 0.6;
     pointer-events: none;
     filter: grayscale(100%);
+  }
+  .autok{
+    display: none;
+  }
+  @font-face {
+    font-family: "Medium";   /*Can be any text*/
+    src: local("AirbnbCerealMedium"),
+      url("/fonts/Newake-Font-Demo.otf") format("otf");
   }

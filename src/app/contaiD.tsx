@@ -5,7 +5,7 @@ type CardProps = {
   };
 const CardList: React.FC<CardProps> = (name) => {
   const [data, setData] = useState([]);
-
+    
   useEffect(() => {
 
     const fetchData = async () => {
