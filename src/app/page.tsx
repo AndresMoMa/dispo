@@ -14,12 +14,9 @@ import ListItem from '@mui/material/ListItem';
 import LetterGroup from './letra';
 import Card from './card';
 import Clock from './reloj';
+import { useEffect } from 'react';
 
 import createNamesByFirstLetter from './create';
-import fsPromises from 'fs/promises';
-import path from 'path'
-import { GetStaticProps } from 'next';
-import { useEffect } from 'react';
 import CardList from './contaiD';
 interface MyObject {
   [key: string]: any; // This allows any string to be used as a key, and the value can be of any type.
@@ -36,7 +33,7 @@ const clients: MyObject =
     "Bosi": "Echo Nexus",
     "Btg bd": "Synergy",
     "Btg cloud_pods": "Synergy",
-    "Cadena": "Gryffindor (BD)",
+    "Cadena": "Gryffindor",
     "Cardio infantil": "Echo Nexus",
     "Celsia": "Equipo Cali",
     "Clinica vida": "Gryffindor",
@@ -83,13 +80,14 @@ export default  function Home() {
   
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCard, setActiveCard] = useState({ name: '' });
-  const [modalText, setModalText] = useState('');
+  const [numero, setnumero] = useState("0");
   const handleCardClick = (name:any) => {
     setActiveCard({ name });
     setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
+    setnumero("0")
     setIsModalOpen(false);
   };
   
@@ -98,11 +96,20 @@ export default  function Home() {
     [clients]
   );
   
-  const handleButtonClick = (buttonText: string) => {
-    
-    setActiveCard({ name: buttonText });
-    
-  };
+ 
+  useEffect(() => {
+    if(numero=="1")
+    {
+      setActiveCard({ name: "Gryffindor (SO y app)" });
+    }
+    else if(numero =="2")
+    {
+      setActiveCard({ name: "Gryffindor (BD)" });
+    }
+    console.log(numero)
+  }, [numero])
+  
+ 
   
 
   return (
@@ -157,7 +164,7 @@ export default  function Home() {
   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
   {activeCard.name === 'Gryffindor' && (
             <>
-              <Button onClick={() => setActiveCard({ name: "Gryffindor (SO y app)" })} sx={{
+              <Button onClick={() => setnumero("1")} sx={{
             
             maxWidth: '420px',
             height: '48px',
@@ -174,7 +181,7 @@ export default  function Home() {
 
             
           }} >Bases de datos </Button>
-              <Button  sx={{
+              <Button onClick={() => setnumero("2")} sx={{
             
             maxWidth: '260px',
             height: '48px',
@@ -191,7 +198,7 @@ export default  function Home() {
           }}>Sistemas Operativos y Aplicacion</Button>
             </>
           )}
-   <CardList name={ String(activeCard.name)} />
+   <CardList  key={numero} name={ String(activeCard.name)} num={numero} />
    
 
 
