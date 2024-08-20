@@ -14,6 +14,7 @@ import ListItem from '@mui/material/ListItem';
 import LetterGroup from './letra';
 import Card from './card';
 import Clock from './reloj';
+
 import createNamesByFirstLetter from './create';
 import fsPromises from 'fs/promises';
 import path from 'path'
@@ -82,7 +83,7 @@ export default  function Home() {
   
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCard, setActiveCard] = useState({ name: '' });
-
+  const [modalText, setModalText] = useState('');
   const handleCardClick = (name:any) => {
     setActiveCard({ name });
     setIsModalOpen(true);
@@ -97,6 +98,17 @@ export default  function Home() {
     [clients]
   );
   
+  const handleButtonClick = (buttonText: string) => {
+    
+    setActiveCard({ name: buttonText });
+    
+  };
+
+  useEffect(() => {
+    if (activeCard.name) {
+      handleCardClick(activeCard.name);
+    }
+  }, [activeCard]);
   return (
   
     <main className="flex min-h-screen flex-col items-center flex-col p-24">
@@ -140,15 +152,51 @@ export default  function Home() {
     <Modal
         open={isModalOpen}
         onClose={handleCloseModal}
-        sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}
       >
         <Box sx={{ backgroundColor: 'white', padding: '20px', borderRadius: '12px' }}>
         <Typography variant="h3" component="h1" align="center" sx={{ marginBottom: '20px', fontFamily:"Sanchez" ,color:"darkred"}}>
         {activeCard.name}
   </Typography>
   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-  <CardList name={String(activeCard.name)}></CardList>
-    
+  {activeCard.name === 'Gryffindor' && (
+            <>
+              <Button onClick={() => setActiveCard({ name: "Gryffindor (SO y app)" })} sx={{
+            
+            maxWidth: '420px',
+            height: '48px',
+            backgroundColor: 'white',
+            borderRadius: '8px',
+            display: 'flex',
+            fontFamily:"Sanchez",
+            alignItems: 'center',
+            borderStyle:'solid',
+            borderColor:'red' ,
+            borderWidth:2,
+            color:"black",
+            marginRight:"30px"
+
+            
+          }} >Bases de datos </Button>
+              <Button  sx={{
+            
+            maxWidth: '260px',
+            height: '48px',
+            backgroundColor: 'white',
+            borderRadius: '8px',
+            display: 'flex',
+            fontFamily:"Sanchez",
+            alignItems: 'center',
+            borderStyle:'solid',
+            borderColor:'red' ,
+            borderWidth:2,
+            color:"black"
+            
+          }}>Sistemas Operativos y Aplicacion</Button>
+            </>
+          )}
+   <CardList name={ String(activeCard.name)} />
+   
 
 
   </div>
