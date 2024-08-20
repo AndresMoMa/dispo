@@ -104,11 +104,7 @@ export default  function Home() {
     
   };
 
-  useEffect(() => {
-    if (activeCard.name) {
-      handleCardClick(activeCard.name);
-    }
-  }, [activeCard]);
+
   return (
   
     <main className="flex min-h-screen flex-col items-center flex-col p-24">
