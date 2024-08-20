@@ -13,7 +13,7 @@ const CardList: React.FC<CardProps> = (name) => {
 
     const fetchData = async () => {
       try {
-        const url="https://api-generator.retool.com/Lc03As/dispo?ClientesI="+name.name
+        const url="https://api-generator.retool.com/ebAMD9/dispon?ClientesI="+name.name
         const response = await fetch(url);
         console.log(name)
         const result = await response.json();
