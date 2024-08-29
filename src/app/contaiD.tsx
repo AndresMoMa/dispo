@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Dispoc from './dispo'; // Adjust the path as necessary
 import { visibilidad } from './visibilida';
+import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+
 type CardProps = {
     name: string;
     num:string;
@@ -51,8 +53,18 @@ const CardList: React.FC<CardProps> = (name,num) => {
   }, []);
 
   return (
+    
     <div style={{ display: 'flex ', justifyContent: 'space-between' }}>
-      
+<Sidebar width='300'>
+  <Menu>
+    
+    <MenuItem>N1 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
+    <MenuItem>N2 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span> </MenuItem>
+    <MenuItem>N3 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
+    <MenuItem> Lider De servicio &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
+    <MenuItem> Gerente &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
+  </Menu>
+</Sidebar>
       {data.map((item: any) => (
         <Dispoc
           key={item.id} // Assuming each item has a unique `id`

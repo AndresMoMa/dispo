@@ -79,6 +79,7 @@ body {
   border-style: solid;
   border-color: red;
   border-width: 2px;
+  vertical-align: middle; 
 }
 .dot2 {
   height: 25px;
@@ -103,3 +104,16 @@ body {
     src: local("Newake-Font-Demo"),
       url("/fonts/Newake-Font-Demo.otf") format("opentype");
   }
+
+
+  
+  .modal.open 
+    
+    {
+    scale:  1;
+    transition: scale .3s ease-in-out;
+    @starting-style {
+      scale: 0;
+    }
+  }
+  

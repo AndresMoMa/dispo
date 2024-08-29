@@ -154,14 +154,17 @@ export default  function Home() {
     </Container>
     <Modal
         open={isModalOpen}
+        
         onClose={handleCloseModal}
+        
         sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}
       >
         <Box sx={{ backgroundColor: 'white', padding: '20px', borderRadius: '12px' }}>
         <Typography variant="h3" component="h1" align="center" sx={{ marginBottom: '20px', fontFamily:"Sanchez" ,color:"darkred"}}>
         {activeCard.name}
   </Typography>
-  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+  
+  <div style={{ display: 'flex', justifyContent: 'space-around' }}>
   {activeCard.name === 'Gryffindor' && (
             <>
               <Button onClick={() => setnumero("1")} sx={{
