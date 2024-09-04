@@ -21,9 +21,10 @@ const Card: React.FC<CardProps> = ({ name,to,onClick}) => {
           display: 'flex',
           fontFamily:"Sanchez",
           alignItems: 'center',
-          borderStyle:'solid',
-          borderColor:'red' ,
-          borderWidth:2
+          borderStyle:'solid',  
+          borderColor:'rgba(255,127,127,0.8)' ,
+          borderWidth:2,
+          boxShadow: 3
           
         }}
         onClick={onClick}

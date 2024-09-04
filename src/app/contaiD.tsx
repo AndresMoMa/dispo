@@ -25,16 +25,16 @@ const CardList: React.FC<CardProps> = (name,num) => {
         setData(result);
         console.log(url)
         }
-        if (name.num=="1"){
+        if (name.num=="2"){
           console.log("arrre")
-          const url="https://api-generator.retool.com/A6HCoP/dispo?ClientesI=Gryffindor (SO y app)"
+          const url="https://api-generator.retool.com/A6HCoP/dispo?ClientesI=Gryffindor%20(SO%20Y%20APP)"
         const response = await fetch(url);
         console.log(name)
         const result = await response.json();
         setData(result);
         console.log(url)
         }
-        if (name.num=="2"){
+        if (name.num=="1"){
           console.log("arrre")
           const url="https://api-generator.retool.com/A6HCoP/dispo?ClientesI=Gryffindor (BD)"
         const response = await fetch(url);
