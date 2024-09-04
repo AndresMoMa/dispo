@@ -21,8 +21,9 @@ const Dispoc: React.FC<CardProps> = ({ nivel,nombre,telefono}) => {
       </Typography>
       <Typography sx={{ mt: 2, color: "black", fontFamily:"Sanchez"}} align="center">
         
-        <br /> &nbsp;
-        {nombre}
+         &nbsp;
+        <div className="nombre-uppercase">{nombre}</div>
+        
         <div className="flex justify-center">
         <IconContext.Provider value={{ color: "red", size:"35" }}>
 

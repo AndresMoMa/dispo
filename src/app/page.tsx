@@ -15,7 +15,7 @@ import LetterGroup from './letra';
 import Card from './card';
 import Clock from './reloj';
 import { useEffect } from 'react';
-import { visibilidad, visibilidadb1,visibilidadbarra,visibilidadbarraoff} from './visibilida';
+import { visibilidad, visibilidadb1,seleccion} from './visibilida';
 import createNamesByFirstLetter from './create';
 import CardList from './contaiD';
 interface MyObject {
@@ -175,7 +175,7 @@ export default  function Home() {
   {activeCard.name === 'Gryffindor' && (
             <>
          
-              <Button onClick={() => {setnumero("1");visibilidadbarra()}} sx={{
+              <Button onClick={() => {setnumero("1")}} sx={{
             
             maxWidth: '420px',
             height: '48px',

@@ -1,28 +1,32 @@
 
-        export function visibilidadbarra()
-        {
-            console.log("fUNCIONO")
-            const menu = document.getElementById("menu")
-            console.log(menu)
-            menu.classList.remove("autok")
-            console.log("funciono")
-        }
-        export function visibilidadbarraoff()
-        {
-            const menu = document.getElementById("menu")
-            menu.classList.remove("autok")
-        }
+        
         export function  seleccion(nivel)
         {
             const N1M=document.getElementById("N1M")
             const N2M=document.getElementById("N2M")
             const N3M=document.getElementById("N3M")
             const N4M=document.getElementById("N1M")
-            if (nivel==1)
-            {
-                N1M.carta[i].classList.remove("dot");
-
-            }
+                
+                if (nivel==1)
+                {
+                    const as=N1M.querySelector(".dot")
+                    as.classList.remove("dot")
+                }
+                if (nivel==2)
+                    {
+                        const as=N2M.querySelector(".dot")
+                        as.classList.remove("dot")
+                    }
+                    if (nivel==3)
+                        {
+                            const as=N3M.querySelector(".dot")
+                            as.classList.remove("dot")
+                        }
+                        if (nivel==4)
+                            {
+                                const as=N4M.querySelector(".dot")
+                                as.classList.remove("dot")
+                            }
         }
 
     export function visibilidad() {
