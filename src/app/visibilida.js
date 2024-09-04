@@ -1,147 +1,38 @@
 
-
 export function seleccion(nivel) {
-    const N1M = document.getElementById("N1M")
-    const N2M = document.getElementById("N2M")
-    const N3M = document.getElementById("N3M")
-    const N4M = document.getElementById("N4M")
-    const N5M = document.getElementById("N5M")
+    console.log("2sad")
+    const nivelMapping = {
+        1: "N1M",
+        2: "N2M",
+        3: "N3M",
+        4: "N4M"
+    };
 
-    if (nivel == 1) {
-        const as = N1M.querySelector(".dot")
-        if (as)
+    // Get the element based on the selected level
+    const currentElement = document.getElementById(nivelMapping[nivel]);
 
-            {
-        if (as.classList.contains("dot")) {
-            as.classList.remove("dot");
-            as.classList.add("dots");
+    if (currentElement) {
+        const dotElement = currentElement.querySelector(".dot");
+        if (dotElement) {
+            dotElement.classList.remove("dot");
+            dotElement.classList.add("dots");
         }
     }
-        const n1Elements = document.getElementsByClassName("N1");
-        const n2Elements = document.getElementsByClassName("N2");
-        const n3Elements = document.getElementsByClassName("N3");
-        const n4Elements = document.getElementsByClassName("N4");
-        for (let i = 0; i < n1Elements.length; i++) {
-            n1Elements[i].classList.add("column");
-            n1Elements[i].classList.remove("autok");
-        }
 
-        for (let i = 0; i < n2Elements.length; i++) {
-            n2Elements[i].classList.add("autok");
-            n2Elements[i].classList.remove("column");
+    // Handle visibility toggling based on level
+    const allLevels = ["N1", "N2", "N3", "N4"];
+    allLevels.forEach((level, index) => {
+        const elements = document.getElementsByClassName(level);
+        for (let i = 0; i < elements.length; i++) {
+            if (index + 1 === nivel) {
+                elements[i].classList.add("column");
+                elements[i].classList.remove("autok");
+            } else {
+                elements[i].classList.add("autok");
+                elements[i].classList.remove("column");
+            }
         }
-        for (let i = 0; i < n3Elements.length; i++) {
-            n3Elements[i].classList.add("autok");
-            n3Elements[i].classList.remove("column");
-        }
-        for (let i = 0; i < n4Elements.length; i++) {
-            n4Elements[i].classList.add("autok");
-            n4Elements[i].classList.remove("column");
-        }
-        
-
-
-    }
-    if (nivel == 2) {
-        const as = N2M.querySelector(".dot")
-        if (as)
-
-            {
-        if (as.classList.contains("dot")) {
-            as.classList.remove("dot");
-            as.classList.add("dots");
-        }
-
-        const n1Elements = document.getElementsByClassName("N1");
-        const n2Elements = document.getElementsByClassName("N2");
-        const n3Elements = document.getElementsByClassName("N3");
-        const n4Elements = document.getElementsByClassName("N4");
-        for (let i = 0; i < n1Elements.length; i++) {
-            n1Elements[i].classList.remove("column");
-            n1Elements[i].classList.add("autok");
-        }
-
-        for (let i = 0; i < n2Elements.length; i++) {
-            n2Elements[i].classList.remove("autok");
-            n2Elements[i].classList.add("column");
-        }
-        for (let i = 0; i < n3Elements.length; i++) {
-            n3Elements[i].classList.add("autok");
-            n3Elements[i].classList.remove("column");
-        }
-        for (let i = 0; i < n4Elements.length; i++) {
-            n4Elements[i].classList.add("autok");
-            n4Elements[i].classList.remove("column");
-        }
-    }
-    if (nivel == 3) {
-        const as = N3M.querySelector(".dot")
-        if (as)
-
-            {
-        if (as.classList.contains("dot")) {
-            as.classList.remove("dot");
-            as.classList.add("dots");
-        }
-
-        const n1Elements = document.getElementsByClassName("N1");
-        const n2Elements = document.getElementsByClassName("N2");
-        const n3Elements = document.getElementsByClassName("N3");
-        const n4Elements = document.getElementsByClassName("N4");
-        for (let i = 0; i < n1Elements.length; i++) {
-            n1Elements[i].classList.remove("column");
-            n1Elements[i].classList.add("autok");
-        }
-
-        for (let i = 0; i < n2Elements.length; i++) {
-            n2Elements[i].classList.add("autok");
-            n2Elements[i].classList.remove("column");
-        }
-        for (let i = 0; i < n3Elements.length; i++) {
-            n3Elements[i].classList.remove("autok");
-            n3Elements[i].classList.add("column");
-        }
-        for (let i = 0; i < n4Elements.length; i++) {
-            n4Elements[i].classList.add("autok");
-            n4Elements[i].classList.remove("column");
-        }
-    }
-    }
-    if (nivel == 4) {
-        const as = N4M.querySelector(".dot")
-        if (as)
-
-            {
-        if (as.classList.contains("dot")) {
-            as.classList.remove("dot");
-            as.classList.add("dots");
-        }
-
-        const n1Elements = document.getElementsByClassName("N1");
-        const n2Elements = document.getElementsByClassName("N2");
-        const n3Elements = document.getElementsByClassName("N3");
-        const n4Elements = document.getElementsByClassName("N4");
-        for (let i = 0; i < n1Elements.length; i++) {
-            n1Elements[i].classList.remove("column");
-            n1Elements[i].classList.add("autok");
-        }
-
-        for (let i = 0; i < n2Elements.length; i++) {
-            n2Elements[i].classList.add("autok");
-            n2Elements[i].classList.remove("column");
-        }
-        for (let i = 0; i < n3Elements.length; i++) {
-            n3Elements[i].classList.add("autok");
-            n3Elements[i].classList.remove("column");
-        }
-        for (let i = 0; i < n4Elements.length; i++) {
-            n4Elements[i].classList.remove("autok");
-            n4Elements[i].classList.add("column");
-        }
-    }
-    }
-
-}
+    });
 }
 export function visibilidad() {
     const carta = document.getElementsByClassName("N1")
