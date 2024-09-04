@@ -9,15 +9,29 @@ export function seleccion(nivel) {
     };
 
     // Get the element based on the selected level
-    const currentElement = document.getElementById(nivelMapping[nivel]);
+    const allElements = ["N1M", "N2M", "N3M", "N4M"];
 
-    if (currentElement) {
-        const dotElement = currentElement.querySelector(".dot");
-        if (dotElement) {
-            dotElement.classList.remove("dot");
-            dotElement.classList.add("dots");
+    // Loop through all elements
+    allElements.forEach((elementId, index) => {
+        const element = document.getElementById(elementId);
+        if (element) {
+            const dotElement = element.querySelector(".dot, .dots");
+
+            // If it's the selected level, remove 'dot' and add 'dots'
+            if (index + 1 === nivel) {
+                if (dotElement) {
+                    dotElement.classList.remove("dot");
+                    dotElement.classList.add("dots");
+                }
+            } else {
+                // For all other levels, remove 'dots' and add 'dot'
+                if (dotElement) {
+                    dotElement.classList.remove("dots");
+                    dotElement.classList.add("dot");
+                }
+            }
         }
-    }
+    });
 
     // Handle visibility toggling based on level
     const allLevels = ["N1", "N2", "N3", "N4"];
