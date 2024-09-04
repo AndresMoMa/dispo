@@ -119,14 +119,17 @@ body {
   }
 
 
-  
-  .modal.open 
-    
-    {
-    scale:  1;
-    transition: scale .3s ease-in-out;
-    @starting-style {
-      scale: 0;
+  @keyframes appear {
+    from{
+      opacity: 0;
+
     }
+    to{
+      opacity: 1;
+    }
+  }
+  .modal.open 
+    {
+      animation: appear 5s; 
   }
   
