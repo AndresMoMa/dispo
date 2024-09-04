@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Dispoc from './dispo'; // Adjust the path as necessary
-import { visibilidad } from './visibilida';
+import { seleccion, visibilidad } from './visibilida';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 
 type CardProps = {
@@ -65,11 +65,11 @@ const CardList: React.FC<CardProps> = (name,num) => {
 <Sidebar width='300'>
   <Menu id="menu" className='autok'>
     
-    <MenuItem id="N1M">N1 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dots'></span></MenuItem>
-    <MenuItem id="N2M" >N2 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span> </MenuItem>
-    <MenuItem id="N3M">N3 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
-    <MenuItem id="N4M"> Lider De servicio &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
-    <MenuItem id="N5M"> Gerente &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
+    <MenuItem active={false}  onClick={ () => seleccion(1) } tabIndex={0}  id="N1M">N1 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dots'></span></MenuItem>
+    <MenuItem onClick={ () => seleccion(2) } id="N2M" >N2 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span> </MenuItem>
+    <MenuItem onClick={ () => seleccion(3) } id="N3M">N3 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
+    <MenuItem onClick={ () => seleccion(4) } id="N4M"> Lider De servicio &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
+    <MenuItem onClick={ () => seleccion(5) } id="N5M"> Gerente &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
   </Menu>
 </Sidebar>
       {data.map((item: any) => (
