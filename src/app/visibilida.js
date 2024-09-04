@@ -1,6 +1,17 @@
 
-  
+        
+        export function  seleccion(nivel)
+        {
+            const N1M=document.getElementById("N1M")
+            const N2M=document.getElementById("N2M")
+            const N3M=document.getElementById("N3M")
+            const N4M=document.getElementById("N1M")
+            if (nivel==1)
+            {
+                N1M.carta[i].classList.remove("dot");
 
+            }
+        }
 
     export function visibilidad() {
         const carta=document.getElementsByClassName("N1")

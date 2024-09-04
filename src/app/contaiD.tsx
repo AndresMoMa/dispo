@@ -58,11 +58,11 @@ const CardList: React.FC<CardProps> = (name,num) => {
 <Sidebar width='300'>
   <Menu>
     
-    <MenuItem>N1 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
-    <MenuItem>N2 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span> </MenuItem>
-    <MenuItem>N3 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
-    <MenuItem> Lider De servicio &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
-    <MenuItem> Gerente &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
+    <MenuItem id="N1M">N1 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
+    <MenuItem id="N2M" >N2 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span> </MenuItem>
+    <MenuItem id="N3M">N3 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
+    <MenuItem id="N4M"> Lider De servicio &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
+    <MenuItem id="N5M"> Gerente &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
   </Menu>
 </Sidebar>
       {data.map((item: any) => (

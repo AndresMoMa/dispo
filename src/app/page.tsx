@@ -68,9 +68,11 @@ const clients: MyObject =
     "PROTECCIÓN": "Echo Nexus",
     "SETI INTERNO": "Gryffindor",
     "SURA IM MÉXICO": "Equipo Cali",
+    "SURA URUGUAY": "Equipo Cali",
     "TCC": "Gryffindor",
-    "XM BD": "XM BD",
-    "XM SO": "XM SO",
+    "XM BD": "Gryffindor",
+    "XM SO": "Gryffindor",
+    "XM ODS": "Gryffindor",
     "ZONA FRANCA": "Echo Nexus"
   }
 
@@ -101,11 +103,11 @@ export default  function Home() {
   useEffect(() => {
     if(numero=="1")
     {
-      setActiveCard({ name: "Gryffindor (SO y app)" });
+      setActiveCard({ name: "Gryffindor (BD)" });
     }
     else if(numero =="2")
     {
-      setActiveCard({ name: "Gryffindor (BD)" });
+      setActiveCard({ name: "Gryffindor (SO y app)" });
     }
     console.log(numero)
   }, [numero])
