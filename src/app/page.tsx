@@ -72,7 +72,7 @@ const clients: MyObject =
     "TCC": "Gryffindor",
     "XM BD": "Gryffindor",
     "XM SO": "Gryffindor",
-    "XM ODS": "Gryffindor",
+    "XM ODS": "XM ODS",
     "ZONA FRANCA": "Echo Nexus"
   }
 
