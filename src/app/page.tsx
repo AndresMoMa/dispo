@@ -68,7 +68,7 @@ const clients: MyObject =
     "PROTECCIÓN": "Echo Nexus",
     "SETI INTERNO": "Gryffindor",
     "SURA IM MÉXICO": "Equipo Cali",
-    "SURA URUGUAY": "Equipo Cali",
+    "SURA URUGUAY": "Gryffindor",
     "TCC": "Gryffindor",
     "XM BD": "Gryffindor",
     "XM SO": "Gryffindor",
