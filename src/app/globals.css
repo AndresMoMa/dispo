@@ -109,9 +109,7 @@ body {
     pointer-events: none;
     filter: grayscale(100%);
   }
-  .autok{
-    display: none;
-  }
+  
   @font-face {
     font-family: "Newake-Font-Demo";   /*Can be any text*/
     src: local("Newake-Font-Demo"),
@@ -119,17 +117,20 @@ body {
   }
 
 
-  @keyframes appear {
-    from{
-      opacity: 0;
-
-    }
-    to{
-      opacity: 1;
-    }
+  .autok {
+    display: none; /* Initial state remains as 'none' */
   }
-  .modal.open 
-    {
-      animation: appear 5s; 
+  
+  .autok.visible {
+    display: block; /* Set to 'block' when visible */
+    opacity: 0; /* Start with 0 opacity */
+    max-height: 0; /* Start with zero height */
+    overflow: hidden; /* Hide overflow during the animation */
+    transition: opacity 0.5s ease, max-height 0.5s ease; /* Define transitions */
+  }
+  
+  .autok.animate {
+    opacity: 1; /* Fade in */
+    max-height: 500px; /* Adjust based on expected content height */
   }
   

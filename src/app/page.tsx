@@ -134,6 +134,9 @@ export default  function Home() {
 
         </p>
         <p className="fixed right-0 top-0 flex w-full justify-left 6 pt-8 backdrop-blur-2xl   lg:static lg:w-auto   pb-10"style={{ fontSize:30,   color: 'red',fontFamily:"Sanchez"}}>
+        Listado Equipos
+        </p>
+        <p className="fixed right-0 top-0 flex w-full justify-left 6 pt-8 backdrop-blur-2xl   lg:static lg:w-auto   pb-10"style={{ fontSize:30,   color: 'red',fontFamily:"Sanchez"}}>
         <Clock/>
         <br/>
         </p>

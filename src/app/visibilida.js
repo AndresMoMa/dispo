@@ -47,6 +47,14 @@ export function seleccion(nivel) {
             }
         }
     });
+    if (nivel === 5) {
+        alert("Contactar a William Tapasco ");
+        const carta = document.getElementsByClassName("N1")
+    for (let i = 0; i < carta.length; i++) {
+        carta[i].classList.remove("autok");
+        carta[i].classList.add("column");
+    }
+    }
 }
 export function visibilidad() {
     const carta = document.getElementsByClassName("N1")

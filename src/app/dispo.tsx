@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
@@ -6,7 +6,7 @@ import Image from "next/image";
 import { CgProfile } from "react-icons/cg";
 import { IconContext } from "react-icons";
 import { visibilidad, visibilidadb1} from './visibilida';
-
+import React, { useState, useEffect } from 'react';
 type CardProps = {
     nivel: any;
     nombre: any;
@@ -14,19 +14,21 @@ type CardProps = {
     
   };
 const Dispoc: React.FC<CardProps> = ({ nivel,nombre,telefono}) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
   return (
-    <div className={`autok ${nivel}`}   style={{width:180,fontFamily:"Sanchez"}}>
+    <div className={`autok ${nivel} ${isVisible ? 'visible animate' : ''}`}  style={{width:180,fontFamily:"Sanchez"}}>
       <Typography sx={{  color: "red", fontFamily:"Sanchez"}} variant="h6" component="h2" id='niveld'align="center">
         {nivel}
       </Typography>
       <Typography sx={{ mt: 2, color: "black", fontFamily:"Sanchez"}} align="center">
-        
          &nbsp;
         <div className="nombre-uppercase">{nombre}</div>
-        
         <div className="flex justify-center">
         <IconContext.Provider value={{ color: "red", size:"35" }}>
-
         <CgProfile />
         </IconContext.Provider>
         </div>
