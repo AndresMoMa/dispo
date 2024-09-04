@@ -13,6 +13,7 @@ const CardList: React.FC<CardProps> = (name,num) => {
     visibilidad();
   }, [data]);
   useEffect(() => {
+    
     const fetchData = async () => {
       try {
         
@@ -24,6 +25,10 @@ const CardList: React.FC<CardProps> = (name,num) => {
         const result = await response.json();
         setData(result);
         console.log(url)
+        if(name.name!="Gryffindor")
+        {
+        document.getElementById('menu')?.classList.remove('autok');
+        }
         }
         if (name.num=="2"){
           console.log("arrre")
@@ -33,6 +38,7 @@ const CardList: React.FC<CardProps> = (name,num) => {
         const result = await response.json();
         setData(result);
         console.log(url)
+        document.getElementById('menu')?.classList.remove('autok');
         }
         if (name.num=="1"){
           console.log("arrre")
@@ -42,6 +48,7 @@ const CardList: React.FC<CardProps> = (name,num) => {
         const result = await response.json();
         setData(result);
         console.log(url)
+        document.getElementById('menu')?.classList.remove('autok');
         }
         
       } catch (error) {
@@ -56,7 +63,7 @@ const CardList: React.FC<CardProps> = (name,num) => {
     
     <div style={{ display: 'flex ', justifyContent: 'space-between' }}>
 <Sidebar width='300'>
-  <Menu>
+  <Menu id="menu" className='autok'>
     
     <MenuItem id="N1M">N1 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span></MenuItem>
     <MenuItem id="N2M" >N2 &nbsp; &nbsp; &nbsp; &nbsp; <span className='dot'></span> </MenuItem>

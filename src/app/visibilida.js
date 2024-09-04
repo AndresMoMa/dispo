@@ -1,5 +1,17 @@
 
-        
+        export function visibilidadbarra()
+        {
+            console.log("fUNCIONO")
+            const menu = document.getElementById("menu")
+            console.log(menu)
+            menu.classList.remove("autok")
+            console.log("funciono")
+        }
+        export function visibilidadbarraoff()
+        {
+            const menu = document.getElementById("menu")
+            menu.classList.remove("autok")
+        }
         export function  seleccion(nivel)
         {
             const N1M=document.getElementById("N1M")

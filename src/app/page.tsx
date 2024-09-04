@@ -15,7 +15,7 @@ import LetterGroup from './letra';
 import Card from './card';
 import Clock from './reloj';
 import { useEffect } from 'react';
-
+import { visibilidad, visibilidadb1,visibilidadbarra,visibilidadbarraoff} from './visibilida';
 import createNamesByFirstLetter from './create';
 import CardList from './contaiD';
 interface MyObject {
@@ -80,13 +80,14 @@ const clients: MyObject =
 
 
 export default  function Home() {
-  
+  const [Open, setOpen] = useState("autok");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCard, setActiveCard] = useState({ name: '' });
   const [numero, setnumero] = useState("0");
   const handleCardClick = (name:any) => {
     setActiveCard({ name });
     setIsModalOpen(true);
+   
   };
 
   const handleCloseModal = () => {
@@ -98,7 +99,7 @@ export default  function Home() {
     () => createNamesByFirstLetter(Object.keys(clients)),
     [clients]
   );
-  
+
  
   useEffect(() => {
     if(numero=="1")
@@ -109,10 +110,13 @@ export default  function Home() {
     {
       setActiveCard({ name: "Gryffindor (SO y app)" });
     }
+    else if (activeCard.name != 'Gryffindor') {
+      document.getElementById('menu')?.classList.remove('autok');
+    }
     console.log(numero)
   }, [numero])
   
- 
+  
   
 
   return (
@@ -170,7 +174,8 @@ export default  function Home() {
   <div style={{ display: 'flex', justifyContent: 'space-around' }}>
   {activeCard.name === 'Gryffindor' && (
             <>
-              <Button onClick={() => setnumero("1")} sx={{
+         
+              <Button onClick={() => {setnumero("1");visibilidadbarra()}} sx={{
             
             maxWidth: '420px',
             height: '48px',
