@@ -45,7 +45,7 @@ const clients: MyObject =
     "D1": "Echo Nexus",
     "DISLICORES": "Gryffindor",
     "DR SURA APP": "DR Sura APP",
-    "DR SURA BD": "Gryffindor (DB)",
+    "DR SURA BD": "Gryffindor (BD)",
     "DR SURA SO": "Gryffindor (SO Y APP)",
     "EL COLOMBIANO": "Gryffindor",
     "EMI": "Echo Nexus",
