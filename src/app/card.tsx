@@ -9,7 +9,11 @@ type CardProps = {
   };
 const Card: React.FC<CardProps> = ({ name,to,onClick}) => {
   const [isDayTime, setIsDayTime] = useState(true);
-
+  const [isDayTimeE, setIsDayTimeE] = useState(true);
+  useEffect(() => {
+    const currentHour = new Date().getHours();
+    setIsDayTime(currentHour >= 6 && currentHour < 18); // Check if it's between 6 AM and 6 PM
+  }, []);
   useEffect(() => {
     const currentHour = new Date().getHours();
     setIsDayTime(currentHour >= 6 && currentHour < 18); // Check if it's between 6 AM and 6 PM
