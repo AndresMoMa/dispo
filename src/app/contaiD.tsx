@@ -74,7 +74,7 @@ const CardList: React.FC<CardProps> = (name,num) => {
 </Sidebar>
       {data.map((item: any) => (
         <Dispoc
-          key={item.id} // Assuming each item has a unique `id`
+          key={item.id} 
           nivel={item.Nivel}
           nombre={item.Nombre}
           telefono={item.Telefono}

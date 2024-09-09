@@ -18,6 +18,7 @@ import { useEffect } from 'react';
 import { visibilidad, visibilidadb1,seleccion} from './visibilida';
 import createNamesByFirstLetter from './create';
 import CardList from './contaiD';
+import { Alert } from '@mui/material';
 interface MyObject {
   [key: string]: any; // This allows any string to be used as a key, and the value can be of any type.
 }
@@ -80,14 +81,29 @@ const clients: MyObject =
 
 
 export default  function Home() {
-  const [Open, setOpen] = useState("autok");
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCard, setActiveCard] = useState({ name: '' });
   const [numero, setnumero] = useState("0");
-  const handleCardClick = (name:any) => {
-    setActiveCard({ name });
-    setIsModalOpen(true);
-   
+  const [numeroc, setnumeroc] = useState("0");
+  const handleCardClick = (name:any,color:any,index:any) => {
+    
+    if (color!="rgba(255, 255, 255, 0.818)")
+    {
+      
+      if (index=="LINEA DIRECTA")
+        {
+          alert("Si es SQL Contactar a juan pablo pavas, Oracle  y Mysql : Chat Gryffidor")
+        }
+        else
+      {alert("Horario Habil: Contactar por canal de teams: "+name)}
+    }
+    else{
+      
+      setActiveCard({ name });
+      setIsModalOpen(true);
+      console.log(color)
+    }
   };
 
   const handleCloseModal = () => {
@@ -147,13 +163,14 @@ export default  function Home() {
         {Object.keys(clientsByLetter).map((letter) => (
           <ListItem key={letter}>
             <LetterGroup letter={letter}>
-              {clientsByLetter[letter].map((name: React.Key) => (
+              {clientsByLetter[letter].map((name: React.Key,index:any) => (
+                
                 <Card
                   key={name}
                   name={name}
                   to={"sip:${telefono}"}
-                  onClick={() => handleCardClick(clients[name.toString()])}
-              
+                  onClick={(color) => handleCardClick(clients[name.toString()], color,name.toString())}
+                
                   
                 />
               ))}
