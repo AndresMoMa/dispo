@@ -44,7 +44,7 @@ const clients: MyObject =
     "CORREDORES ASOCIADOS": "Echo Nexus",
     "D1": "Echo Nexus",
     "DISLICORES": "Gryffindor",
-    "DR SURA APP": "DR Sura APP",
+    "DR SURA APP": "UNIO",
     "DR SURA BD": "Gryffindor (BD)",
     "DR SURA SO": "Gryffindor (SO Y APP)",
     "EL COLOMBIANO": "Gryffindor",
@@ -72,7 +72,7 @@ const clients: MyObject =
     "TCC": "Gryffindor",
     "XM BD": "Gryffindor",
     "XM SO": "Gryffindor",
-    "XM ODS": "XM ODS",
+    "XM ODS": "INTEGRATORS XM ODS",
     "ZONA FRANCA": "Echo Nexus"
   }
 
@@ -121,7 +121,7 @@ export default  function Home() {
 
   return (
   
-    <main className="flex min-h-screen flex-col items-center flex-col p-24">
+    <main className="flex min-h-screen  items-center flex-col p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center  backdrop-blur-2xl  lg:static lg:w-auto  lg:rounded-xl pb-10 pt-10">
         <Image
