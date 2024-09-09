@@ -95,7 +95,7 @@ export default  function Home() {
       
       if (index=="LINEA DIRECTA")
         {
-          alert("Si es SQL Contactar a juan pablo pavas, Oracle  y Mysql : Chat Gryffidor")
+          alert("Si es SQL lo gestiona Juan Pablo Pavas Hasta las 4:30 despues Gryffindor, Oracle  y Mysql : Chat Gryffidor")
         }
         else
       {alert("Horario Habil: Contactar por canal de teams: "+name)}
