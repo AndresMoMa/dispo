@@ -71,6 +71,8 @@ const clients: MyObject =
     "SURA IM MÉXICO": "Equipo Cali",
     "SURA URUGUAY": "Gryffindor",
     "TCC": "Gryffindor",
+    "TI TIPO 1":"TI TIPO 1",
+    "TI TIPO 2":"TI TIPO 2",
     "XM BD": "Gryffindor",
     "XM SO": "Gryffindor",
     "XM ODS": "INTEGRATORS XM ODS",
