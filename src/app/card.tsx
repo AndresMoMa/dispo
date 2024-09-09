@@ -11,9 +11,16 @@ const Card: React.FC<CardProps> = ({ name,to,onClick}) => {
   const [isDayTime, setIsDayTime] = useState(true);
   const [isDayTimeE, setIsDayTimeE] = useState(true);
   useEffect(() => {
+    if(name=="Echo Nexus")
+    {const currentHour = new Date().getHours();
+    setIsDayTime(currentHour >= 7 && currentHour < 22); // Check if it's between 6 AM and 6 PM
+  }
+  else
+  {
     const currentHour = new Date().getHours();
-    setIsDayTime(currentHour >= 6 && currentHour < 18); // Check if it's between 6 AM and 6 PM
-  }, []);
+    setIsDayTime(currentHour >= 6 && currentHour < 18); 
+  }
+}, []);
 
   const backgroundColor = isDayTime ? 'rgb(221, 200, 200)' : 'rgba(255, 255, 255, 0.818)';
   const borderColor = isDayTime ? 'rgb(0,0,0)' : 'red';
