@@ -19,7 +19,7 @@ const CardList: React.FC<CardProps> = (name,num) => {
         
         if (name.num=="0"){
          
-          const url=" https://retoolapi.dev/jtHZ9B/dispo?ClientesI="+name.name
+          const url=" https://retoolapi.dev/6s8dow/dispo?ClientesI="+name.name
         const response = await fetch(url);
         console.log(name)
         const result = await response.json();
@@ -32,7 +32,7 @@ const CardList: React.FC<CardProps> = (name,num) => {
         }
         if (name.num=="2"){
           console.log("arrre")
-          const url="https://retoolapi.dev/jtHZ9B/dispo?ClientesI=Gryffindor%20(SO%20Y%20APP)"
+          const url="https://retoolapi.dev/6s8dow/dispo?ClientesI=Gryffindor%20(SO%20Y%20APP)"
         const response = await fetch(url);
         console.log(name)
         const result = await response.json();
@@ -42,7 +42,7 @@ const CardList: React.FC<CardProps> = (name,num) => {
         }
         if (name.num=="1"){
           console.log("arrre")
-          const url="https://retoolapi.dev/jtHZ9B/dispo?ClientesI=Gryffindor (BD)"
+          const url="https://retoolapi.dev/6s8dow/dispo?ClientesI=Gryffindor (BD)"
         const response = await fetch(url);
         console.log(name)
         const result = await response.json();
