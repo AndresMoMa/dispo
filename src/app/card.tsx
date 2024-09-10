@@ -39,7 +39,7 @@ const borderColor = isDayTime ? 'rgb(0,0,0)' : 'red';
             
           maxWidth: '420px',
           height: '48px',
-          backgroundColor: backgroundColor  ,
+          backgroundColor: name === 'Gryffindor' ? 'red' : backgroundColor ,
           borderRadius: '8px',
           display: 'flex',
           fontFamily:"Sanchez",
