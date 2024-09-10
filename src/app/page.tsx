@@ -84,12 +84,8 @@ const clients: MyObject =
 
 export default  function Home() {
   const password = prompt("Ingrese contraseña:");
-
-  if (password !== "Operador*2024s3t1") {
-    document.body.innerHTML = "Contraseña incorrecta";
-  }
-  else
-  {const [isModalOpen, setIsModalOpen] = useState(false);
+console.log(password)
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCard, setActiveCard] = useState({ name: '' });
   const [numero, setnumero] = useState("0");
   const [numeroc, setnumeroc] = useState("0");
@@ -140,7 +136,11 @@ export default  function Home() {
   }, [numero])
   
   
-  
+  if (password !== "Hola") {
+    return(document.body.innerHTML = "Contraseña incorrecta")
+  }
+  else
+  {
 
   return (
   
@@ -251,4 +251,4 @@ export default  function Home() {
     </main>
     
   );}
-  }
+}
