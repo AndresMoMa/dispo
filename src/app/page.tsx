@@ -83,8 +83,7 @@ const clients: MyObject =
 
 
 export default  function Home() {
-  const password = prompt("Ingrese contraseña:");
-console.log(password)
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCard, setActiveCard] = useState({ name: '' });
   const [numero, setnumero] = useState("0");
@@ -135,7 +134,7 @@ console.log(password)
     console.log(numero)
   }, [numero])
   
-  
+  const password = prompt("Ingrese contraseña:");
   if (password !== "Hola") {
     return(document.body.innerHTML = "Contraseña incorrecta")
   }
