@@ -19,6 +19,8 @@ import { visibilidad, visibilidadb1,seleccion} from './visibilida';
 import createNamesByFirstLetter from './create';
 import CardList from './contaiD';
 import { Alert } from '@mui/material';
+import { useRouter } from 'next/router';
+import { Console } from 'console';
 interface MyObject {
   [key: string]: any; // This allows any string to be used as a key, and the value can be of any type.
 }
@@ -89,17 +91,33 @@ export default  function Home() {
   const [numero, setnumero] = useState("0");
   const [numeroc, setnumeroc] = useState("0");
   const handleCardClick = (name:any,color:any,index:any) => {
-    
+  
     if (color!="rgba(255, 255, 255, 0.818)")
     {
-      
-      if (index=="LINEA DIRECTA")
-        {
+      console.log(index)
+      switch (index)
+      {
+        case "LINEA DIRECTA":
           alert("Si es SQL lo gestiona Juan Pablo Pavas Hasta las 4:30 despues Gryffindor, Oracle  y Mysql : Chat Gryffidor")
-        }
-        else
-      {alert("Horario Habil: Contactar por canal de teams: "+name)}
+          break
+        case "DR SURA APP":
+        alert("Horario Habil: Contactar por canal de teams: DR SURA ")
+        break
+        case "DR SURA BD":
+          alert("Horario Habil: Contactar por canal de teams: DR SURA ")
+          break
+        case "DR SURA SO":
+          alert("Horario Habil: Contactar por canal de teams: DR SURA ")
+          break
+        default:
+          alert("Horario Habil: Contactar por canal de teams: "+name)
+          break
+
+      }
+
+  
     }
+        
     else{
       
       setActiveCard({ name });
@@ -134,12 +152,7 @@ export default  function Home() {
     console.log(numero)
   }, [numero])
   
-  const password = prompt("Ingrese contraseña:");
-  if (password !== "Hola") {
-    return(document.body.innerHTML = "Contraseña incorrecta")
-  }
-  else
-  {
+  
 
   return (
   
@@ -250,4 +263,4 @@ export default  function Home() {
     </main>
     
   );}
-}
+
