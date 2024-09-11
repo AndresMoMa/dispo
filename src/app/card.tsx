@@ -13,25 +13,39 @@ const Card: React.FC<CardProps> = ({ name,to,onClick}) => {
   useEffect(() => {
     const currentHour = new Date().getHours();
     setIsDayTime(currentHour >= 6 && currentHour < 18); 
-  
+    const currentHourE = new Date().getHours();
+    setIsDayTimeE(currentHourE >= 6 && currentHourE < 22); 
 }, []);
 
 const getColorBasedOnName = (name: string) => {
-
-  switch (name) {
+console.log(to)
+  switch (to) {
     case 'Echo Nexus':
-      return isDayTime ? 'rgb(255, 200, 200)' : 'rgba(255, 0, 0, 0.8)';
+      return isDayTimeE ? 'rgb(221, 200, 200)' : 'rgb(255, 255, 255)';
+      
     case 'Gryffindor':
-      return isDayTime ? 'rgb(200, 200, 255)' : 'rgba(0, 0, 255, 0.8)';
+      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(255, 255, 255)';
     case 'Equipo Cali':
-      return isDayTime ? 'rgb(200, 255, 200)' : 'rgba(0, 255, 0, 0.8)';
+      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(255, 255, 255)';
     default:
-      return isDayTime ? 'rgb(221, 200, 200)' : 'rgba(255, 255, 255, 0.818)';
+      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(255, 255, 255)';
   }
 };
 
+
+
 const backgroundColor = getColorBasedOnName(name);
-const borderColor = isDayTime ? 'rgb(0,0,0)' : 'red';
+const borderColor2 = (col:any)=>{
+  if(col=='rgb(255, 255, 255)')
+  {return "red"}
+  else
+  {
+    "red"
+  }
+
+}
+const coloborde =borderColor2(getColorBasedOnName(name))
+
   return (
     <Link href="#" underline="none" color="black"  >
       <Box
@@ -39,13 +53,13 @@ const borderColor = isDayTime ? 'rgb(0,0,0)' : 'red';
             
           maxWidth: '420px',
           height: '48px',
-          backgroundColor: name === 'Gryffindor' ? 'red' : backgroundColor ,
+          backgroundColor: name === 'Echo Nexus' ? 'red' : backgroundColor  ,
           borderRadius: '8px',
           display: 'flex',
           fontFamily:"Sanchez",
           alignItems: 'center',
           borderStyle:'solid',  
-          borderColor:  borderColor ,
+          borderColor:  name === 'Echo Nexus' ? 'red' : coloborde ,
           borderWidth:2,
           boxShadow: 3
           

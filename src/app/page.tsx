@@ -92,7 +92,7 @@ export default  function Home() {
   const [numeroc, setnumeroc] = useState("0");
   const handleCardClick = (name:any,color:any,index:any) => {
   
-    if (color!="rgba(255, 255, 255, 0.818)")
+    if (color!="rgb(255, 255, 255)")
     {
       console.log(index)
       switch (index)
@@ -187,7 +187,7 @@ export default  function Home() {
                 <Card
                   key={name}
                   name={name}
-                  to={"sip:${telefono}"}
+                  to={clients[name.toString()]}
                   onClick={(color) => handleCardClick(clients[name.toString()], color,name.toString())}
                 
                   
