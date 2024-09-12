@@ -14,12 +14,14 @@
     "@mui/material": "^5.16.6",
     "@pnp/graph": "^4.3.0",
     "@pnp/sp": "^4.3.0",
+    "formik": "^2.4.6",
     "next": "14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18",
     "react-icons": "^5.3.0",
     "react-live-clock": "^6.1.23-beta",
-    "react-pro-sidebar": "^1.1.0"
+    "react-pro-sidebar": "^1.1.0",
+    "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
     "@types/node": "^20",
