@@ -26,17 +26,18 @@ export default function Login() {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', width: '300px' }}>
-        <h2>Login</h2>
+        <h2 style={{ fontSize:30,   color: 'red',fontFamily:"Sanchez"}}>Login</h2>
   
-        <label htmlFor="password">Contraseña:</label>
+        <label style={{ fontSize:17,   color: 'black',fontFamily:"Sanchez"}} htmlFor="password">Contraseña:</label>
         <input
           type="password"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          
         />
-        <button type="submit">Login</button>
+        <button className="custom-button">Iniciar</button>
       </form>
     </div>
   );
