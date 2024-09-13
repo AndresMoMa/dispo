@@ -92,10 +92,15 @@ export default  function Home() {
   const [numeroc, setnumeroc] = useState("0");
   const handleCardClick = (name:any,color:any,index:any) => {
   
-   
-      setActiveCard({ name });
+    if (color=='rgb(221, 200, 200)')
+    {
+      console.log("hoolo")
+      alert("Escalar a traves del canal de teams")
+    }
+   else
+     { setActiveCard({ name });
       setIsModalOpen(true);
-      console.log(color)
+      console.log(color)}
     
   };
 

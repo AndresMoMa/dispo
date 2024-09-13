@@ -21,13 +21,13 @@ const getColorBasedOnName = (name: string) => {
 
   switch (to) {
     case 'Echo Nexus':
-      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(221, 200, 200)';
+      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(225, 225, 225)';
     case 'Gryffindor':
-      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(221, 200, 200)';
+      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(225, 225, 225)';
     case 'Equipo Cali':
-      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(221, 200, 200)';
+      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(225, 225, 225)';
     default:
-      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(221, 200, 200)';
+      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(225, 225, 225)';
   }
 };
 
