@@ -31,7 +31,7 @@ const clients: MyObject =
     "ACCIÓN FIDUCIARIA": "Echo Nexus",
     "ALIANZA FIDUCIARIA": "Echo Nexus",
     "ALKOSTO": "Echo Nexus",
-    "ATH": "ATH",
+    "ATH": "Arthemis",
     "BANCO W": "Equipo Cali",
     "BOSI": "Echo Nexus",
     "BTG BD": "Synergy BD",
