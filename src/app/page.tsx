@@ -12,7 +12,7 @@ export default function Login() {
     // Handle login logic here
     console.log('Email:', email);
     console.log('Password:', password);
-    if (password=="Operador20249")
+    if (email== "Opera2024" || password=="Operador20249*")
       {
         console.log("nose")
         router.push('/loginas')
@@ -30,6 +30,14 @@ export default function Login() {
   
         <label style={{ fontSize:17,   color: 'black',fontFamily:"Sanchez"}} htmlFor="password"> Contraseña:      Provisonal es Operador20249</label>
         <input
+          type="name"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          
+        />
+        <input
           type="password"
           id="password"
           value={password}
@@ -37,6 +45,7 @@ export default function Login() {
           required
           
         />
+        
         <button className="custom-button">Iniciar</button>
       </form>
     </div>
