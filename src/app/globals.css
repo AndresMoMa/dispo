@@ -99,7 +99,7 @@ body {
   width: 25px;
   background-color: rgb(221, 200, 200);
   border-radius: 50%;
-  border-color: white;
+  border-color: red;
   border-width: 2px;
   display: inline-block;
   vertical-align: middle; 
