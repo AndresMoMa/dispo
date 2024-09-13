@@ -91,11 +91,33 @@ export default  function Home() {
   const [numero, setnumero] = useState("0");
   const [numeroc, setnumeroc] = useState("0");
   const handleCardClick = (name:any,color:any,index:any) => {
-  
+     if (index=="LINEA DIRECTA")
+     {
+
+     }
     if (color=='rgb(221, 200, 200)')
     {
+      switch(index)
+      {
+        case "LINEA DIRECTA":
+          alert("Escalar a traves del canal de teams de gryffidnor si la alarma no es sql , 6 am a 4:30 pm juan pablo pavas gestiona ")
+          break
+          case "DR SURA BD":
+          alert("Escalar a traves del canal de teams  DR SURA")
+          break
+          case "DR SURA APP":
+          alert("Escalar a traves del canal de teams: DR SURA")
+          break
+          case "DR SURA SO":
+          alert("Escalar a traves del canal de teams :DR SURA")
+          break
+          default:
+          alert("Escalar a traves del canal de teams :"+name)
+          break
+
+      }
       console.log("hoolo")
-      alert("Escalar a traves del canal de teams")
+     
     }
    else
      { setActiveCard({ name });
