@@ -18,29 +18,28 @@ const Card: React.FC<CardProps> = ({ name,to,onClick}) => {
 }, []);
 
 const getColorBasedOnName = (name: string) => {
-console.log(to)
+
   switch (to) {
     case 'Echo Nexus':
-      return isDayTimeE ? 'rgb(221, 200, 200)' : 'rgb(255, 255, 255)';
-      
+      return isDayTime ? 'rgb(255, 255, 255)' : 'rgb(221, 200, 200)';
     case 'Gryffindor':
-      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(255, 255, 255)';
+      return isDayTime ? 'rgb(255, 255, 255)' : 'rgb(221, 200, 200)';
     case 'Equipo Cali':
-      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(255, 255, 255)';
+      return isDayTime ? 'rgb(255, 255, 255)' : 'rgb(221, 200, 200)';
     default:
-      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(255, 255, 255)';
+      return isDayTime ? 'rgb(255, 255, 255)' : 'rgb(221, 200, 200)';
   }
 };
 
 
 
-const backgroundColor = getColorBasedOnName(name);
+const backgroundColor = getColorBasedOnName(to);
 const borderColor2 = (col:any)=>{
   if(col=='rgb(255, 255, 255)')
   {return "red"}
   else
   {
-    "red"
+    "black"
   }
 
 }
@@ -53,13 +52,13 @@ const coloborde =borderColor2(getColorBasedOnName(name))
             
           maxWidth: '420px',
           height: '48px',
-          backgroundColor: name === 'Echo Nexus' ? 'red' : backgroundColor  ,
+          backgroundColor: name === 'Echo Nexus' ? 'white' : backgroundColor,
           borderRadius: '8px',
           display: 'flex',
           fontFamily:"Sanchez",
           alignItems: 'center',
           borderStyle:'solid',  
-          borderColor:  name === 'Echo Nexus' ? 'red' : coloborde ,
+          borderColor:  `red` ,
           borderWidth:2,
           boxShadow: 3
           

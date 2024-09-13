@@ -92,38 +92,11 @@ export default  function Home() {
   const [numeroc, setnumeroc] = useState("0");
   const handleCardClick = (name:any,color:any,index:any) => {
   
-    if (color!="rgb(255, 255, 255)")
-    {
-      console.log(index)
-      switch (index)
-      {
-        case "LINEA DIRECTA":
-          alert("Si es SQL lo gestiona Juan Pablo Pavas Hasta las 4:30 despues Gryffindor, Oracle  y Mysql : Chat Gryffidor")
-          break
-        case "DR SURA APP":
-        alert("Horario Habil: Contactar por canal de teams: DR SURA ")
-        break
-        case "DR SURA BD":
-          alert("Horario Habil: Contactar por canal de teams: DR SURA ")
-          break
-        case "DR SURA SO":
-          alert("Horario Habil: Contactar por canal de teams: DR SURA ")
-          break
-        default:
-          alert("Horario Habil: Contactar por canal de teams: "+name)
-          break
-
-      }
-
-  
-    }
-        
-    else{
-      
+   
       setActiveCard({ name });
       setIsModalOpen(true);
       console.log(color)
-    }
+    
   };
 
   const handleCloseModal = () => {
