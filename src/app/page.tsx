@@ -28,7 +28,7 @@ export default function Login() {
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', width: '300px' }}>
         <h2 style={{ fontSize:30,   color: 'red',fontFamily:"Sanchez"}}>Login</h2>
   
-        <label style={{ fontSize:17,   color: 'black',fontFamily:"Sanchez"}} htmlFor="password"> Contraseña:      Provisonal es Operador20249</label>
+        <label style={{ fontSize:17,   color: 'black',fontFamily:"Sanchez"}} htmlFor="password"> Usuario:     </label>
         <input
           type="name"
           id="email"
@@ -37,6 +37,8 @@ export default function Login() {
           required
           
         />
+        <br></br>
+        <label style={{ fontSize:17,   color: 'black',fontFamily:"Sanchez"}} htmlFor="password"> Contraseña:  </label>
         <input
           type="password"
           id="password"
@@ -45,6 +47,7 @@ export default function Login() {
           required
           
         />
+        <br></br>
         
         <button className="custom-button">Iniciar</button>
       </form>
