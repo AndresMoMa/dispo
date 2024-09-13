@@ -100,7 +100,7 @@ export default  function Home() {
       switch(index)
       {
         case "LINEA DIRECTA":
-          alert("Escalar a traves del canal de teams de gryffidnor si la alarma no es sql , 6 am a 4:30 pm juan pablo pavas gestiona ")
+          alert("Escalar a traves del canal de teams de Gryffindor si la alarma no es sql ,si es sql 6 am a 4:30 pm juan pablo pavas gestiona ")
           break
           case "DR SURA BD":
           alert("Escalar a traves del canal de teams  DR SURA")

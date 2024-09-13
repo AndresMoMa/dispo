@@ -18,10 +18,10 @@ const Card: React.FC<CardProps> = ({ name,to,onClick}) => {
 }, []);
 
 const getColorBasedOnName = (name: string) => {
-
+  console.log(to)
   switch (to) {
     case 'Echo Nexus':
-      return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(225, 225, 225)';
+      return isDayTimeE ? 'rgb(221, 200, 200)' : 'rgb(225, 225, 225)';
     case 'Gryffindor':
       return isDayTime ? 'rgb(221, 200, 200)' : 'rgb(225, 225, 225)';
     case 'Equipo Cali':
